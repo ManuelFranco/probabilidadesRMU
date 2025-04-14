@@ -1,0 +1,28 @@
+.tabla-contenedor {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .tabla-resultados th,
+  .tabla-resultados td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .tabla-resultados th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .tabla-resultados tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  

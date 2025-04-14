@@ -1,0 +1,151 @@
+.simulador-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.tabla-partidos,
+.tabla-clasificacion {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.botones {
+  margin: 20px 0;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+
+input[type="number"] {
+  width: 50px;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="range"] {
+  margin-top: 4px;
+}
+
+.slider {
+  margin-top: 10px;
+  height: 8px;
+  background: linear-gradient(to right, green 0%, green var(--local), goldenrod var(--local), goldenrod var(--empate), red var(--empate), red 100%);
+  border-radius: 4px;
+  position: relative;
+}
+
+.thumb {
+  height: 16px;
+  width: 16px;
+  background-color: #444;
+  border-radius: 50%;
+  cursor: grab;
+  top: -4px;
+  position: relative;
+}
+
+.track {
+  background: transparent;
+}
+
+.probabilidad-slider {
+  height: 12px;
+  display: flex;
+  background: transparent;
+  border-radius: 6px;
+}
+
+.slider-thumb {
+  height: 20px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+  z-index: 2;
+}
+
+table {
+  width: 100%;
+  table-layout: auto;
+}
+td {
+  white-space: nowrap;
+}
+
+.probabilidad-slider {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(to right, green 0%, green var(--local), goldenrod var(--empate), red var(--visitante));
+  position: relative;
+}
+
+.slider-thumb {
+  height: 20px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+  z-index: 2;
+}
+
+.slider-track {
+  background: transparent;
+}
+
+
+.slider-plano {
+  height: 12px;
+  background: transparent;
+}
+
+.slider-track {
+  background: transparent;
+}
+
+.slider-thumb {
+  height: 20px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+

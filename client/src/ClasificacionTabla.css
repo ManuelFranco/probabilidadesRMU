@@ -1,0 +1,38 @@
+.tabla-clasificacion-contenedor {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .tabla-clasificacion {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: white;
+  }
+  
+  .tabla-clasificacion th,
+  .tabla-clasificacion td {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .tabla-clasificacion th {
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  .tabla-clasificacion tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  .tabla-clasificacion tr:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .tabla-clasificacion td strong {
+    color: #2e7d32;
+  }
+  

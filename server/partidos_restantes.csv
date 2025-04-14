@@ -1,0 +1,61 @@
+JORNADA,LOCAL,VISITANTE,PROB_LOCAL,PROB_EMPATE,PROB_VISITANTE
+33, UD Ibiza, Sevilla Atlético,0.25,0.5,0.25
+33,Villarreal B, Intercity,0.25,0.5,0.25
+33,AD Ceuta, Marbella,0.25,0.5,0.25
+33,Betis B, Hércules,0.25,0.5,0.25
+33,Antequera, Yeclano, 0.25,0.5,0.25
+33,Atlético Madrid B, Alcoyano, 0.25,0.5,0.25
+33,Fuenlabrada, Mérida, 0.25,0.5,0.25
+33,Recreativo, RM Castilla, 0.25,0.5,0.25
+33,Alcorcón, Real Murcia, 0.25,0.5,0.25
+33,Algeciras, Atlético Sanluqueño, 0.25,0.5,0.25
+34,Marbella,Atlético Madrid B,0.25,0.5,0.25  
+34,Atlético Sanluqueño,Intercity,0.25,0.5,0.25  
+34,Alcoyano,Recreativo,0.25,0.5,0.25  
+34,Yeclano,Algeciras,0.25,0.5,0.25  
+34,RM Castilla,AD Ceuta,0.25,0.5,0.25  
+34,Sevilla Atlético,Betis B,0.25,0.5,0.25  
+34,UD Ibiza,Fuenlabrada,0.25,0.5,0.25  
+34,Mérida,Antequera,0.25,0.5,0.25  
+34,Real Murcia,Villarreal B,0.25,0.5,0.25  
+34,Hércules,Alcorcón,0.25,0.5,0.25
+35,Algeciras,Betis B,0.25,0.5,0.25  
+35,AD Ceuta,Mérida,0.25,0.5,0.25  
+35,Alcorcón,Yeclano,0.25,0.5,0.25  
+35,Atlético Sanluqueño,Alcoyano,0.25,0.5,0.25  
+35,Antequera,Sevilla Atlético,0.25,0.5,0.25  
+35,Atlético Madrid B,Fuenlabrada,0.25,0.5,0.25  
+35,Recreativo,UD Ibiza,0.25,0.5,0.25  
+35,Intercity,Real Murcia,0.25,0.5,0.25  
+35,RM Castilla,Marbella,0.25,0.5,0.25  
+35,Villarreal B,Hércules,0.25,0.5,0.25
+36,Alcoyano,Intercity,0.25,0.5,0.25  
+36,Betis B,Atlético Sanluqueño,0.25,0.5,0.25  
+36,Fuenlabrada,AD Ceuta,0.25,0.5,0.25  
+36,Hércules,Algeciras,0.25,0.5,0.25  
+36,Marbella,Recreativo,0.25,0.5,0.25  
+36,Mérida,RM Castilla,0.25,0.5,0.25  
+36,Real Murcia,Antequera,0.25,0.5,0.25  
+36,Sevilla Atlético,Atlético Madrid B,0.25,0.5,0.25  
+36,UD Ibiza,Alcorcón,0.25,0.5,0.25  
+36,Yeclano,Villarreal B,0.25,0.5,0.25  
+37,AD Ceuta,Yeclano,0.25,0.5,0.25  
+37,Alcorcón,Marbella,0.25,0.5,0.25  
+37,Algeciras,Alcoyano,0.25,0.5,0.25  
+37,Antequera,Betis B,0.25,0.5,0.25  
+37,Atlético Madrid B,UD Ibiza,0.25,0.5,0.25  
+37,Intercity,Hércules,0.25,0.5,0.25  
+37,RM Castilla,Fuenlabrada,0.25,0.5,0.25  
+37,Recreativo,Mérida,0.25,0.5,0.25  
+37,Atlético Sanluqueño,Real Murcia,0.25,0.5,0.25  
+37,Villarreal B,Sevilla Atlético,0.25,0.5,0.25  
+38,Fuenlabrada,Recreativo,0.25,0.5,0.25  
+38,Hércules,Atlético Sanluqueño,0.25,0.5,0.25  
+38,Betis B,Villarreal B,0.25,0.5,0.25  
+38,Mérida,Atlético Madrid B,0.25,0.5,0.25  
+38,Sevilla Atlético,Alcorcón,0.25,0.5,0.25  
+38,Yeclano,Intercity,0.25,0.5,0.25  
+38,UD Ibiza,AD Ceuta,0.25,0.5,0.25  
+38,Marbella,Antequera,0.25,0.5,0.25  
+38,Real Murcia,Algeciras,0.25,0.5,0.25  
+38,Alcoyano,RM Castilla,0.25,0.5,0.25
