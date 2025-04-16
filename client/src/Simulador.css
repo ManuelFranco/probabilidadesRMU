@@ -149,3 +149,24 @@ td {
 }
 
 
+
+.simulador-cargando {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 1.2em;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  animation: spin 1.1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

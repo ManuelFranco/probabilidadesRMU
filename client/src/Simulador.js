@@ -4,6 +4,7 @@ import './Simulador.css';
 
 import ReactSlider from 'react-slider';
 
+
 const nombreArchivoEscudo = (equipo) =>
   `/escudos/${equipo
     .toLowerCase()
@@ -20,6 +21,8 @@ const Simulador = () => {
   const [simulado, setSimulado] = useState(false);
   const [partidosSimulados, setPartidosSimulados] = useState([]);
   const [probabilidadesCampeon, setProbabilidadesCampeon] = useState([]);
+  const [cargando, setCargando] = useState(false);
+
 
 
   useEffect(() => {
@@ -85,6 +88,7 @@ const Simulador = () => {
   
   
   const simularTodo = () => {
+    setCargando(true);
     const partidosDecimales = partidos.map(p => ({
       ...p,
       JORNADA: parseInt(p.JORNADA),
@@ -95,7 +99,8 @@ const Simulador = () => {
   
     axios.post('/simular-multiple', partidosDecimales)
     .then(res => setProbabilidadesCampeon(res.data))
-    .catch(err => console.error(err));
+    .catch(err => console.error(err))
+    .finally(() => setCargando(false));
   
   };
   
@@ -110,6 +115,16 @@ const Simulador = () => {
     setPartidosSimulados([]);
   };
   
+
+  if (cargando) {
+    return (
+      <div className="simulador-cargando">
+        <h2>Simulando resultados...</h2>
+        <div className="loader"></div>
+      </div>
+    );
+  }
+
 
   return (
     <div className="simulador-container">
