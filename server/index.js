@@ -10,6 +10,7 @@ const seedrandom = require('seedrandom');
 const rng = seedrandom('42'); // Puedes cambiar la semilla a voluntad
 
 
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/build')));
@@ -20,7 +21,8 @@ app.get('/', (req, res) => {
 
 app.get('/resultados', (req, res) => {
   const resultados = [];
-  fs.createReadStream('partidos.csv')
+  //fs.createReadStream('partidos.csv')
+  fs.createReadStream(path.join(__dirname, 'partidos.csv'))
     .pipe(csv())
     .on('data', (data) => {
       if (resultados.length < 5) {
@@ -42,7 +44,8 @@ app.get('/clasificacion', (req, res) => {
     const equipos = {};
     const enfrentamientos = {};
   
-    fs.createReadStream('partidos.csv')
+    //fs.createReadStream('partidos.csv')
+    fs.createReadStream(path.join(__dirname, 'partidos.csv'))
       .pipe(csv())
       .on('data', (row) => {
         const local = row.LOCAL.trim();
@@ -141,7 +144,8 @@ let partidosRestantes = []; // Cache temporal en memoria
 // Leer partidos restantes
 app.get('/partidos-restantes', (req, res) => {
   partidosRestantes = [];
-  fs.createReadStream('partidos_restantes.csv')
+  //fs.createReadStream('partidos_restantes.csv')
+  fs.createReadStream(path.join(__dirname, 'partidos_restantes.csv'))
     .pipe(csv())
     .on('data', (row) => {
       partidosRestantes.push({
@@ -195,7 +199,8 @@ app.post('/simular', (req, res) => {
     });
   
     const partidosBase = [];
-    fs.createReadStream('partidos.csv')
+    //fs.createReadStream('partidos.csv')
+    fs.createReadStream(path.join(__dirname, 'partidos.csv'))
       .pipe(csv())
       .on('data', (row) => {
         partidosBase.push({
