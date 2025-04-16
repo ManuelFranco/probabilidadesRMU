@@ -37,7 +37,7 @@ const Simulador = () => {
 
 
   const cargarPartidosRestantes = () => {
-    axios.get('http://localhost:5000/partidos-restantes')
+    axios.get('/partidos-restantes')
       .then(res => {
         const partidosConEnteros = res.data.map(p => ({
           ...p,
@@ -52,7 +52,7 @@ const Simulador = () => {
   };
 
   const cargarClasificacion = () => {
-    axios.get('http://localhost:5000/clasificacion')
+    axios.get('/clasificacion')
       .then(res => setClasificacion(res.data))
       .catch(err => console.error(err));
   };
@@ -66,7 +66,7 @@ const Simulador = () => {
       PROB_VISITANTE: p.PROB_VISITANTE / 100,
     }));
   
-    axios.post('http://localhost:5000/simular', partidosDecimales)
+    axios.post('/simular', partidosDecimales)
       .then(res => {
         setClasificacion(res.data.clasificacion);
         setPartidosSimulados(res.data.partidosSimulados);
@@ -93,7 +93,7 @@ const Simulador = () => {
       PROB_VISITANTE: p.PROB_VISITANTE / 100,
     }));
   
-    axios.post('http://localhost:5000/simular-multiple', partidosDecimales)
+    axios.post('/simular-multiple', partidosDecimales)
     .then(res => setProbabilidadesCampeon(res.data))
     .catch(err => console.error(err));
   
