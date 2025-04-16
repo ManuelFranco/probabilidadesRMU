@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: proyectoSimulacion
+    env: node
+    buildCommand: |
+      cd client && npm install && npm run build
+      cd ../server && npm install
+    startCommand: npm start --prefix server
+    envVars:
+      - key: NODE_VERSION
+        value: 18
