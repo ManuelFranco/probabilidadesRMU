@@ -13,7 +13,9 @@ const rng = seedrandom('42'); // Puedes cambiar la semilla a voluntad
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
+//app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, 'build')));
+
 
 app.get('/', (req, res) => {
   res.send('Servidor funcionando correctamente');

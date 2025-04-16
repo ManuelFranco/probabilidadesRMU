@@ -6,8 +6,8 @@ services:
       npm install --prefix client --legacy-peer-deps
       npm run build --prefix client
       npm install --prefix server
+      cp -r client/build server/build
     startCommand: npm start --prefix server
     envVars:
       - key: NODE_VERSION
         value: 18
-
