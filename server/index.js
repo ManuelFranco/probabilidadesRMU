@@ -39,6 +39,18 @@ app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
 });
 
+app.get('/debug-paths', (req, res) => {
+  const currentDir = __dirname;
+  const partidosPath = path.join(__dirname, 'partidos.csv');
+  const exists = fs.existsSync(partidosPath);
+
+  res.json({
+    __dirname: currentDir,
+    partidosPath,
+    exists
+  });
+});
+
 
 // Nueva ruta: cálculo de clasificación
 app.get('/clasificacion', (req, res) => {
