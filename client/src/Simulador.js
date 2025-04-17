@@ -278,15 +278,15 @@ const Simulador = () => {
 
 {probabilidadesCampeon.length > 0 && (
   <div>
-    <h2>Probabilidad de Ser Campeón / Play-Off</h2>
+    <h2>Probabilidades totales</h2>
     <table className="tabla-clasificacion">
       <thead>
         <tr>
           <th>Equipo</th>
-          <th>% Campeón</th>
-          <th>% Play-Off (2º-5º)</th>
-          <th>% Zona media</th>
-          <th>% Descenso</th>
+          <th>Campeón</th>
+          <th>Play-Off</th>
+          <th>Zona media</th>
+          <th>Descenso</th>
 
         </tr>
       </thead>

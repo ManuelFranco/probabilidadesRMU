@@ -1,61 +1,61 @@
-JORNADA,LOCAL,VISITANTE,PROB_LOCAL,PROB_EMPATE,PROB_VISITANTE
-33, UD Ibiza, Sevilla Atlético,0.25,0.5,0.25
-33,Villarreal B, Intercity,0.25,0.5,0.25
-33,AD Ceuta, Marbella,0.25,0.5,0.25
-33,Betis B, Hércules,0.25,0.5,0.25
-33,Antequera, Yeclano, 0.25,0.5,0.25
-33,Atlético Madrid B, Alcoyano, 0.25,0.5,0.25
-33,Fuenlabrada, Mérida, 0.25,0.5,0.25
-33,Recreativo, RM Castilla, 0.25,0.5,0.25
-33,Alcorcón, Real Murcia, 0.25,0.5,0.25
-33,Algeciras, Atlético Sanluqueño, 0.25,0.5,0.25
-34,Marbella,Atlético Madrid B,0.25,0.5,0.25  
-34,Atlético Sanluqueño,Intercity,0.25,0.5,0.25  
-34,Alcoyano,Recreativo,0.25,0.5,0.25  
-34,Yeclano,Algeciras,0.25,0.5,0.25  
-34,RM Castilla,AD Ceuta,0.25,0.5,0.25  
-34,Sevilla Atlético,Betis B,0.25,0.5,0.25  
-34,UD Ibiza,Fuenlabrada,0.25,0.5,0.25  
-34,Mérida,Antequera,0.25,0.5,0.25  
-34,Real Murcia,Villarreal B,0.25,0.5,0.25  
-34,Hércules,Alcorcón,0.25,0.5,0.25
-35,Algeciras,Betis B,0.25,0.5,0.25  
-35,AD Ceuta,Mérida,0.25,0.5,0.25  
-35,Alcorcón,Yeclano,0.25,0.5,0.25  
-35,Atlético Sanluqueño,Alcoyano,0.25,0.5,0.25  
-35,Antequera,Sevilla Atlético,0.25,0.5,0.25  
-35,Atlético Madrid B,Fuenlabrada,0.25,0.5,0.25  
-35,Recreativo,UD Ibiza,0.25,0.5,0.25  
-35,Intercity,Real Murcia,0.25,0.5,0.25  
-35,RM Castilla,Marbella,0.25,0.5,0.25  
-35,Villarreal B,Hércules,0.25,0.5,0.25
-36,Alcoyano,Intercity,0.25,0.5,0.25  
-36,Betis B,Atlético Sanluqueño,0.25,0.5,0.25  
-36,Fuenlabrada,AD Ceuta,0.25,0.5,0.25  
-36,Hércules,Algeciras,0.25,0.5,0.25  
-36,Marbella,Recreativo,0.25,0.5,0.25  
-36,Mérida,RM Castilla,0.25,0.5,0.25  
-36,Real Murcia,Antequera,0.25,0.5,0.25  
-36,Sevilla Atlético,Atlético Madrid B,0.25,0.5,0.25  
-36,UD Ibiza,Alcorcón,0.25,0.5,0.25  
-36,Yeclano,Villarreal B,0.25,0.5,0.25  
-37,AD Ceuta,Yeclano,0.25,0.5,0.25  
-37,Alcorcón,Marbella,0.25,0.5,0.25  
-37,Algeciras,Alcoyano,0.25,0.5,0.25  
-37,Antequera,Betis B,0.25,0.5,0.25  
-37,Atlético Madrid B,UD Ibiza,0.25,0.5,0.25  
-37,Intercity,Hércules,0.25,0.5,0.25  
-37,RM Castilla,Fuenlabrada,0.25,0.5,0.25  
-37,Recreativo,Mérida,0.25,0.5,0.25  
-37,Atlético Sanluqueño,Real Murcia,0.25,0.5,0.25  
-37,Villarreal B,Sevilla Atlético,0.25,0.5,0.25  
-38,Fuenlabrada,Recreativo,0.25,0.5,0.25  
-38,Hércules,Atlético Sanluqueño,0.25,0.5,0.25  
-38,Betis B,Villarreal B,0.25,0.5,0.25  
-38,Mérida,Atlético Madrid B,0.25,0.5,0.25  
-38,Sevilla Atlético,Alcorcón,0.25,0.5,0.25  
-38,Yeclano,Intercity,0.25,0.5,0.25  
-38,UD Ibiza,AD Ceuta,0.25,0.5,0.25  
-38,Marbella,Antequera,0.25,0.5,0.25  
-38,Real Murcia,Algeciras,0.25,0.5,0.25  
-38,Alcoyano,RM Castilla,0.25,0.5,0.25
+"JORNADA","LOCAL","VISITANTE","PROB_LOCAL","PROB_EMPATE","PROB_VISITANTE"
+33," UD Ibiza"," Sevilla Atlético","0.59","0.23","0.18"
+33,"Villarreal B"," Intercity","0.71","0.21","0.08"
+33,"AD Ceuta"," Marbella","0.66","0.21","0.13"
+33,"Betis B"," Hércules","0.43","0.25","0.32"
+33,"Antequera"," Yeclano","0.57","0.23","0.20"
+33,"Atlético Madrid B"," Alcoyano","0.57","0.24","0.19"
+33,"Fuenlabrada"," Mérida","0.37","0.28","0.35"
+33,"Recreativo"," RM Castilla","0.28","0.29","0.43"
+33,"Alcorcón"," Real Murcia","0.46","0.28","0.26"
+33,"Algeciras"," Atlético Sanluqueño","0.47","0.26","0.27"
+34,"Marbella","Atlético Madrid B","0.3","0.3","0.4"
+34,"Atlético Sanluqueño","Intercity","0.47","0.26","0.27"
+34,"Alcoyano","Recreativo","0.41","0.26","0.33"
+34,"Yeclano","Algeciras","0.37","0.27","0.36"
+34,"RM Castilla","AD Ceuta","0.39","0.31","0.30"
+34,"Sevilla Atlético","Betis B","0.49","0.27","0.24"
+34,"UD Ibiza","Fuenlabrada","0.61","0.22","0.17"
+34,"Mérida","Antequera","0.42","0.28","0.30"
+34,"Real Murcia","Villarreal B","0.47","0.28","0.25"
+34,"Hércules","Alcorcón","0.33","0.29","0.38"
+35,"Algeciras","Betis B","0.5","0.27","0.23"
+35,"AD Ceuta","Mérida","0.6","0.23","0.17"
+35,"Alcorcón","Yeclano","0.57","0.25","0.18"
+35,"Atlético Sanluqueño","Alcoyano","0.41","0.27","0.32"
+35,"Antequera","Sevilla Atlético","0.54","0.24","0.22"
+35,"Atlético Madrid B","Fuenlabrada","0.54","0.24","0.22"
+35,"Recreativo","UD Ibiza","0.31","0.31","0.38"
+35,"Intercity","Real Murcia","0.27","0.29","0.44"
+35,"RM Castilla","Marbella","0.53","0.25","0.22"
+35,"Villarreal B","Hércules","0.6","0.23","0.17"
+36,"Alcoyano","Intercity","0.49","0.25","0.26"
+36,"Betis B","Atlético Sanluqueño","0.48","0.24","0.28"
+36,"Fuenlabrada","AD Ceuta","0.29","0.31","0.4"
+36,"Hércules","Algeciras","0.42","0.27","0.31"
+36,"Marbella","Recreativo","0.38","0.27","0.35"
+36,"Mérida","RM Castilla","0.36","0.28","0.36"
+36,"Real Murcia","Antequera","0.5","0.27","0.23"
+36,"Sevilla Atlético","Atlético Madrid B","0.37","0.29","0.34"
+36,"UD Ibiza","Alcorcón","0.49","0.25","0.26"
+36,"Yeclano","Villarreal B","0.30","0.31","0.39"
+37,"AD Ceuta","Yeclano","0.65","0.22","0.13"
+37,"Alcorcón","Marbella","0.58","0.24","0.18"
+37,"Algeciras","Alcoyano","0.48","0.26","0.26"
+37,"Antequera","Betis B","0.61","0.24","0.15"
+37,"Atlético Madrid B","UD Ibiza","0.46","0.28","0.26"
+37,"Intercity","Hércules","0.34","0.27","0.39"
+37,"RM Castilla","Fuenlabrada","0.51","0.26","0.23"
+37,"Recreativo","Mérida","0.36","0.28","0.36"
+37,"Atlético Sanluqueño","Real Murcia","0.28","0.30","0.42"
+37,"Villarreal B","Sevilla Atlético","0.60","0.23","0.17"
+38,"Fuenlabrada","Recreativo","0.42","0.27","0.31"
+38,"Hércules","Atlético Sanluqueño","0.49","0.25","0.26"
+38,"Betis B","Villarreal B","0.36","0.28","0.36"
+38,"Mérida","Atlético Madrid B","0.42","0.28","0.30"
+38,"Sevilla Atlético","Alcorcón","0.32","0.29","0.39"
+38,"Yeclano","Intercity","0.5","0.25","0.25"
+38,"UD Ibiza","AD Ceuta","0.49","0.27","0.24"
+38,"Marbella","Antequera","0.30","0.31","0.39"
+38,"Real Murcia","Algeciras","0.53","0.25","0.22"
+38,"Alcoyano","RM Castilla","0.27","0.29","0.44"
