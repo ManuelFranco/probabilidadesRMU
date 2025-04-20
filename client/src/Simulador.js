@@ -226,6 +226,7 @@ const Simulador = () => {
           <tr>
             <th>#</th>
             <th>Equipo</th>
+            <th>PJ</th>
             <th>V</th>
             <th>E</th>
             <th>D</th>
@@ -240,6 +241,7 @@ const Simulador = () => {
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{equipo.equipo}</td>
+              <td>{equipo.V + equipo.E + equipo.D}</td>
               <td>{equipo.V}</td>
               <td>{equipo.E}</td>
               <td>{equipo.D}</td>
