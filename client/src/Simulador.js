@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import './Simulador.css';
+
+import { flushSync } from 'react-dom';
+import html2canvas from 'html2canvas';
+import { FaShareAlt } from 'react-icons/fa';
 
 import ReactSlider from 'react-slider';
 
@@ -22,7 +26,52 @@ const Simulador = () => {
   const [partidosSimulados, setPartidosSimulados] = useState([]);
   const [probabilidadesCampeon, setProbabilidadesCampeon] = useState([]);
   const [cargando, setCargando] = useState(false);
+  const [capturing, setCapturing] = useState(false);
 
+  const shareRef = useRef(null);
+  const [shareName, setShareName] = useState('');
+
+
+  const handleShare = async () => {
+    // 1) Pedir nombre al usuario
+    const name = window.prompt('¿Cómo quieres que aparezca tu nombre en la imagen?');
+    if (!name) return; // si cancela o deja vacío, abortar
+
+    // 2) Forzar render con el nuevo nombre antes de capturar
+    flushSync(() => {
+      setShareName(name);
+      setCapturing(true);
+    });
+    // 3) Capturar
+    try {
+      const canvas = await html2canvas(shareRef.current, { scale: 2 });
+      canvas.toBlob(blob => {
+        if (!blob) return;
+        const file = new File([blob], 'predicciones.png', { type: 'image/png' });
+
+        if (navigator.canShare?.({ files: [file] })) {
+          navigator.share({
+            files: [file],
+            title: `Predicciones del final de liga de ${name}`,
+            text: '¡Mira mis probabilidades!'
+          });
+        } else {
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = 'predicciones.png';
+          link.click();
+          URL.revokeObjectURL(url);
+        }
+      }, 'image/png');
+    } catch (err) {
+      console.error('Error al generar la imagen:', err);
+    } finally {
+      // 4) Limpiar el nombre para que no permanezca
+      setShareName('');
+      setCapturing(false);
+    }
+  };
 
 
   useEffect(() => {
@@ -86,7 +135,7 @@ const Simulador = () => {
     setPartidos(copia);
   };
   
-  
+  //    axios.post('http://localhost:5000/simular-multiple', partidosDecimales)
   const simularTodo = () => {
     setCargando(true);
     const partidosDecimales = partidos.map(p => ({
@@ -116,10 +165,51 @@ const Simulador = () => {
   };
   
 
+  const loadingPhrases = [
+    'Intentando aparcar en Nueva Condomina...',
+    'Buscando a Cadorini en el once...',
+    'Detectando a árbitros en modo estrella de cine...',
+    'Localizando a Albertolofe entre la afición visitante...',
+    'Contabilizando fueras de juego no pitados...',
+    'Teniendo en cuenta primas...',
+    'Un saludo a ElPostGrana',
+    'Pidiendo un recibimiento en casa...',
+    'Haciendo cola en la cantina...',
+    'Llevando cuidado con el perro (muerde)...',
+    'Replicando la celebración de Pedro Benito...',
+    'Llenando el Rico Pérez...',
+    'Comprando camisetas falsas por internet...',
+    'Sumando asistencias de Juan Carlos Real...',
+    'Insertando imagen de PeloPincel...',
+    'Echando de menos a Armandismo...',
+  ];
+  // 2) Estado para el índice de frase actual
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    let timer;
+    if (cargando) {
+      // Reiniciamos aleatoriamente al arrancar cada carga
+      setPhraseIndex(Math.floor(Math.random() * loadingPhrases.length));
+  
+      timer = setInterval(() => {
+        setPhraseIndex(i => (i + 1) % loadingPhrases.length);
+      }, 2000);
+    }
+    return () => clearInterval(timer);
+  }, [cargando]);
+  
+
+  // … tu lógica de simularTodo o simular que pone cargando = true …
+
   if (cargando) {
     return (
       <div className="simulador-cargando">
         <h2>Simulando resultados...</h2>
+        {/* 4) Subtítulo dinámico */}
+        <h3 className="loading-subtitle">
+          {loadingPhrases[phraseIndex]}
+        </h3>
         <div className="loader"></div>
       </div>
     );
@@ -277,10 +367,24 @@ const Simulador = () => {
     </table>
   </>
 )}
+    <h2>Probabilidades totales</h2>
+
+      <div 
+        ref={shareRef} 
+        className={`share-card${capturing ? ' capturing' : ''}`}
+      >
+                {/* Título dinámico sólo aparece en el share */}
+        {shareName && (
+          <h2 style={{
+            margin: '0 0 16px',
+            fontFamily: 'Segoe UI, sans-serif'
+          }}>
+            Predicciones de {shareName}
+          </h2>
+        )}
 
 {probabilidadesCampeon.length > 0 && (
   <div>
-    <h2>Probabilidades totales</h2>
     <table className="tabla-clasificacion">
       <thead>
         <tr>
@@ -314,10 +418,26 @@ const Simulador = () => {
   </div>
 )}
 
+  {/* ESTA LÍNEA: sólo se verá en captura */}
+  <p className="share-promo">
+    Simulador diseñado por @RMUBigData. 
+    Calcula tus probabilidades en: https://probabilidadesrmu.onrender.com/
+  </p>
+
+
+</div>
+<button className="btn-share" onClick={handleShare}>
+        <FaShareAlt style={{ marginRight: '6px' }}/>
+        Compartir resumen
+      </button>
+
 
     </div>
   );
   
+
+
+
 };
 
 export default Simulador;
