@@ -315,6 +315,10 @@ app.post('/simular', (req, res) => {
     const playoff = {};
     const ningun = {};
     const descenso = {};
+    const puesto2 = {};
+    const puesto3 = {};
+    const puesto4 = {};
+    const puesto5 = {};
   
     const partidosBase = [];
     fs.createReadStream('partidos.csv')
@@ -405,6 +409,17 @@ app.post('/simular', (req, res) => {
               campeones[equipo.equipo] = (campeones[equipo.equipo] || 0) + 1;
             } else if (idx >= 1 && idx <= 4) {
               playoff[equipo.equipo] = (playoff[equipo.equipo] || 0) + 1;
+              if (idx ==1){
+                puesto2[equipo.equipo] = (puesto2[equipo.equipo] || 0) + 1;
+              } else if (idx == 2){
+                puesto3[equipo.equipo] = (puesto3[equipo.equipo] || 0) + 1;
+              } else if (idx == 3){
+                puesto4[equipo.equipo] = (puesto4[equipo.equipo] || 0) + 1;
+              }
+              else if (idx == 4){
+                puesto5[equipo.equipo] = (puesto5[equipo.equipo] || 0) + 1;
+              }
+
             } else if (idx >= 5 && idx <= 15) {
               ningun[equipo.equipo] = (ningun[equipo.equipo] || 0) + 1;
             } else {
@@ -422,9 +437,29 @@ app.post('/simular', (req, res) => {
           equipo,
           porcentajeCampeon: ((campeones[equipo] || 0) / N * 100).toFixed(2),
           porcentajePlayoff: ((playoff[equipo] || 0) / N * 100).toFixed(2),
+          porcentaje2: ((puesto2[equipo] || 0) / N * 100).toFixed(2),
+          porcentaje3: ((puesto3[equipo] || 0) / N * 100).toFixed(2),
+          porcentaje4: ((puesto4[equipo] || 0) / N * 100).toFixed(2),
+          porcentaje5: ((puesto5[equipo] || 0) / N * 100).toFixed(2),
           porcentajeNingun: ((ningun[equipo] || 0) / N * 100).toFixed(2),
           porcentajeDescenso: ((descenso[equipo] || 0) / N * 100).toFixed(2)
-        })).sort((a, b) => b.porcentajeCampeon - a.porcentajeCampeon);
+        })).sort((a, b) => {
+          // Primero ordenar por porcentajeCampeon
+          if (b.porcentajeCampeon !== a.porcentajeCampeon) {
+            return b.porcentajeCampeon - a.porcentajeCampeon;
+          }
+          // Si hay empate en porcentajeCampeon, ordenar por porcentajePlayoff
+          if (b.porcentajePlayoff !== a.porcentajePlayoff) {
+            return b.porcentajePlayoff - a.porcentajePlayoff;
+          }
+          // Si hay empate en porcentajePlayoff, ordenar por porcentajeNingun
+          if (b.porcentajeNingun !== a.porcentajeNingun) {
+            return b.porcentajeNingun - a.porcentajeNingun;
+          }
+          // Si hay empate en porcentajeNingun, ordenar por porcentajeDescenso
+          return b.porcentajeDescenso - a.porcentajeDescenso;
+        });
+        
   
         res.json(resultados);
       });

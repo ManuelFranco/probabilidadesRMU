@@ -27,9 +27,14 @@ const Simulador = () => {
   const [probabilidadesCampeon, setProbabilidadesCampeon] = useState([]);
   const [cargando, setCargando] = useState(false);
   const [capturing, setCapturing] = useState(false);
+  const [desplegarPlayoff, setDesplegarPlayoff] = useState(null);  // Estado para manejar cuál fila tiene el desglose visible
 
   const shareRef = useRef(null);
   const [shareName, setShareName] = useState('');
+
+  const toggleDesplegarPlayoff = () => {
+    setDesplegarPlayoff(!desplegarPlayoff); // Alternar visibilidad del desglose para todos
+  };
 
 
   const handleShare = async () => {
@@ -390,7 +395,11 @@ const Simulador = () => {
         <tr>
           <th>Equipo</th>
           <th>Campeón</th>
-          <th>Play-Off</th>
+          <th>
+            <div onClick={toggleDesplegarPlayoff} style={{ cursor: 'pointer' }}>
+            Play-Off
+            </div>
+          </th>
           <th>Zona media</th>
           <th>Descenso</th>
 
@@ -408,7 +417,33 @@ const Simulador = () => {
     {e.equipo}
   </td>
             <td><strong>{e.porcentajeCampeon}%</strong></td>
-            <td>{e.porcentajePlayoff}%</td>
+            <td>
+                <div>
+                  {/* Mostrar porcentaje de Playoff principal */}
+                  <div>
+                    {e.porcentajePlayoff}%
+                  </div>
+
+                  {/* Desplegar el desglose para todos si el estado está activo */}
+                  {desplegarPlayoff && (
+                    <div style={{ marginTop: '8px', paddingLeft: '10px', borderTop: '1px solid #ddd' }}>
+                      {/* Mostrar los puestos 2, 3, 4, 5 solo si tienen más de 0% */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        {e.porcentaje2 > 0 && <div>Puesto 2</div>}
+                        {e.porcentaje3 > 0 && <div>Puesto 3</div>}
+                        {e.porcentaje4 > 0 && <div>Puesto 4</div>}
+                        {e.porcentaje5 > 0 && <div>Puesto 5</div>}
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        {e.porcentaje2 > 0 && <div>{e.porcentaje2}%</div>}
+                        {e.porcentaje3 > 0 && <div>{e.porcentaje3}%</div>}
+                        {e.porcentaje4 > 0 && <div>{e.porcentaje4}%</div>}
+                        {e.porcentaje5 > 0 && <div>{e.porcentaje5}%</div>}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </td>
             <td>{e.porcentajeNingun}%</td>
             <td>{e.porcentajeDescenso}%</td>
           </tr>
