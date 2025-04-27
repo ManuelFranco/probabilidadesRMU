@@ -429,10 +429,10 @@ const Simulador = () => {
                     <div style={{ marginTop: '8px', paddingLeft: '10px', borderTop: '1px solid #ddd' }}>
                       {/* Mostrar los puestos 2, 3, 4, 5 solo si tienen más de 0% */}
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        {e.porcentaje2 > 0 && <div>Puesto 2</div>}
-                        {e.porcentaje3 > 0 && <div>Puesto 3</div>}
-                        {e.porcentaje4 > 0 && <div>Puesto 4</div>}
-                        {e.porcentaje5 > 0 && <div>Puesto 5</div>}
+                        {e.porcentaje2 > 0 && <div>2º</div>}
+                        {e.porcentaje3 > 0 && <div>3º</div>}
+                        {e.porcentaje4 > 0 && <div>4º</div>}
+                        {e.porcentaje5 > 0 && <div>5º</div>}
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         {e.porcentaje2 > 0 && <div>{e.porcentaje2}%</div>}
